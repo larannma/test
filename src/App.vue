@@ -32,6 +32,7 @@
         }
         this.newItemValue = '';
         this.selectedItem = '';
+        console.log(this.items)
       }
     },
   };
