@@ -3,10 +3,11 @@
     <div class="root__container">
       <h2 class="form__title">Редактирование структуры</h2>
       <form class="form" @submit.prevent="editStructure" novalidate>
-        <select v-model="selectedItem" id="name" name="name" class="form__name form__input" required>
+        <p class="form__select-title">Выберите элемент для редактирования</p>
+        <select placeholder="Выберите элемент" v-model="selectedItem" id="name" name="name" class="form__name form__input" required>
           <option v-for="item in items" :value="item.value" :key="item.value">{{ item.name }}</option>
         </select>
-        <input v-model="newItemValue" class="form__input" type="text"/>
+        <input placeholder="Новое значение" v-model="newItemValue" class="form__input" type="text"/>
         <button type="submit" class="form__submitButton">Редактировать</button>
       </form>
     </div>
@@ -74,7 +75,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -107,6 +108,10 @@
 
 .form__input {
   min-height: 45px;
+  font-size: 15px;
+}
+
+.form__select-title {
   font-size: 20px;
 }
 
